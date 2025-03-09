@@ -76,11 +76,11 @@
     margin-bottom: 30px;
 }
 .addproducts {
-    width: 70%;
-
-    margin-left: 350px;
+    width: 80%;
+    margin-left: 255px;
     padding: 20px;
     border-radius: 15px;
+    margin-bottom: 50px;
     border: 3px solid black;
 
 }

@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
 document.getElementById("productForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -20,6 +19,7 @@ document.getElementById("productForm").addEventListener("submit", function(event
     let name = document.getElementById("productName").value.trim();
     let type = document.getElementById("productType").value.trim().toLowerCase();
     let quantity = parseInt(document.getElementById("productQuantity").value.trim());
+    let price = parseInt(document.getElementById("productPrice").value.trim());
 
     if (!["electronics", "cloths", "foods"].includes(type)) {
         alert("Invalid product type! Use: electronics, cloths, or foods.");
@@ -44,7 +44,7 @@ document.getElementById("productForm").addEventListener("submit", function(event
         }
 
         // Add new product
-        let newProduct = { id, name, type, quantity };
+        let newProduct = { id, name, type, quantity, price };
         products.push(newProduct);
         alert("Product added successfully!");
     }
@@ -52,4 +52,5 @@ document.getElementById("productForm").addEventListener("submit", function(event
     localStorage.setItem("products", JSON.stringify(products));
 
     document.getElementById("productForm").reset();
+    loadProducts(); // Reload the products to update the UI
 });
