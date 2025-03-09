@@ -70,4 +70,44 @@
         margin-left: 0;
     }
 }
+.title{
+    margin-left: 350px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+.addproducts {
+    width: 70%;
+
+    margin-left: 350px;
+    padding: 20px;
+    border-radius: 15px;
+    border: 3px solid black;
+
+}
+.addproducts .forms{
+    display: flex;
+    justify-content: space-around;
+}
+
+.forms input:focus::placeholder{
+    width: 0;
+}
+
+.addproducts input{
+ 
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+}
+
+.forms button{
+    padding: 10px;
+    border-radius: 7px;
+    outline: none;
+    border: none;
+    color: white;
+    background: linear-gradient(135deg, #ff4c60, #ff9966);
+    cursor: pointer;
+}
 
