@@ -45,4 +45,31 @@
     </div>
 
 </body>
+<script>
+
+    // search electronics
+    var search=document.querySelector("#searchBar");
+    search.addEventListener("input", searchElectronics);
+
+// Function to search products dynamically in the Electronics section
+function searchElectronics(event) {
+    let searchTerm = event.target.value.toLowerCase(); // Get the input value
+    let electronicsDiv = document.querySelector(".electronics"); // Get the electronics div
+    let productItems = electronicsDiv.querySelectorAll(".product-item"); // Get all product items
+
+    productItems.forEach(item => {
+        let id = item.getAttribute("data-id").toLowerCase();    // Get Product ID
+        let name = item.getAttribute("data-name").toLowerCase(); // Get Product Name
+
+        // Show or hide based on matching ID or Name
+        if (id.includes(searchTerm) || name.includes(searchTerm)) {
+            item.style.display = "flex"; // Show item
+            item.style.justifycontent = "space-between";
+        } else {
+            item.style.display = "none"; // Hide item
+        }
+    });
+}
+
+</script>
 </htm

@@ -15,9 +15,9 @@ function addProductToUI(product) {
 
     productDiv.innerHTML = `
         <strong>${product.name}</strong> 
-        (ID: ${product.id}, Qty: <span class="qty">${product.quantity}</span> 
+        ID: ${product.id} <span class="qty">Qty:${product.quantity}</span> 
         <span class="price">Total quantity Price: ${product.price * product.quantity}</span>
-        <span class="price">Price: ${product.price}</span>)
+        <span class="price">Price: ${product.price}</span>
         <button class="remove-btn" data-id="${product.id}">Remove</button>
     `;
 
@@ -31,24 +31,6 @@ function addProductToUI(product) {
     });
 }
 
-// Function to search products dynamically
-function searchProducts(event) {
-    let searchTerm = event.target.value.toLowerCase();
-    let categoryDiv = event.target.parentElement; // Get the parent category div
-
-    let productItems = categoryDiv.querySelectorAll(".product-item");
-
-    productItems.forEach(item => {
-        let id = item.getAttribute("data-id"); // Get Product ID
-        let name = item.getAttribute("data-name"); // Get Product Name
-
-        // Debug information
-        console.log(`Searching for: ${searchTerm}, Product ID: ${id}, Product Name: ${name}`);
-
-        // Search by Product ID or Product Name
-        item.style.display = id.includes(searchTerm) || name.includes(searchTerm) ? "block" : "none";
-    });
-}
 
 // Attach event listeners to all search bars
 document.querySelectorAll(".searchBar").forEach(searchBar => {
@@ -97,6 +79,7 @@ function removeOneQuantity(productId) {
 
     alert(`${removeQty} quantity removed!`);
 }
+
 
 // Load products when the page loads
 window.onload = loadProducts;

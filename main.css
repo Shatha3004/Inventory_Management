@@ -45,7 +45,46 @@
 }
 
 
+.title {
+    margin-left: 350px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
 
+.addproducts {
+    width: 80%;
+    margin-left: 255px;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 50px;
+    border: 3px solid black;
+}
+
+.addproducts .forms {
+    display: flex;
+    justify-content: space-around;
+}
+
+.forms input:focus::placeholder {
+    width: 0;
+}
+
+.addproducts input {
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+}
+
+.forms button {
+    padding: 10px;
+    border-radius: 7px;
+    outline: none;
+    border: none;
+    color: white;
+    background: linear-gradient(135deg, #ff4c60, #ff9966);
+    cursor: pointer;
+}
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -56,6 +95,20 @@
         width: 250px;
         height: 180px;
     }
+    .forms {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .addproducts {
+        margin-left: 265px;
+        width: 60%;
+    }
+    .forms input {
+        margin-bottom: 10px;
+        width: 80%;
+    }
+    
 }
 
 @media (max-width: 768px) {
@@ -66,48 +119,36 @@
     .child {
         width: 90%;
     }
-    .parent{
+    .parent {
         margin-left: 0;
     }
-}
-.title{
-    margin-left: 350px;
-    margin-top: 40px;
-    margin-bottom: 30px;
-}
-.addproducts {
-    width: 80%;
-    margin-left: 255px;
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 50px;
-    border: 3px solid black;
-
-}
-.addproducts .forms{
-    display: flex;
-    justify-content: space-around;
+    .forms {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .forms input {
+        margin-bottom: 30px;
+        width: 80%;
+    }
+    .addproducts {
+        margin-left: 10px;
+        width: 80%;
+    }
+    .title {
+        margin-left: 10px;
+    }
 }
 
-.forms input:focus::placeholder{
-    width: 0;
-}
-
-.addproducts input{
- 
-    padding: 10px;
-    border: none;
-    outline: none;
-    border-bottom: 2px solid black;
-}
-
-.forms button{
-    padding: 10px;
-    border-radius: 7px;
-    outline: none;
-    border: none;
-    color: white;
-    background: linear-gradient(135deg, #ff4c60, #ff9966);
-    cursor: pointer;
-}
+/* @media (max-width: 480px) {
+    .addproducts {
+        width: 100%;
+        margin: 5px auto;
+        padding: 10px;
+    }
+    .forms input, .forms button {
+        padding: 8px;
+        font-size: 12px;
+    }
+} */
 
