@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="Sidebar.css">
     <link rel="stylesheet" href="main.css">
     <script defer src="script.js"></script>
-    
+    <script src="products.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+   
+   
 </head>
 <body>
 
@@ -54,5 +58,51 @@
         </form>
     </div>
 
+    <div class="barchart">
+        <canvas id="productBarChart"></canvas>
+    </div>
+
 </body>
+
+<script>
+    function loadProductsForMain() {
+        let products = JSON.parse(localStorage.getItem("products")) || [];
+        generateBarChart(products);
+    }
+
+    function generateBarChart(products) {
+        let categories = {};
+
+        products.forEach(product => {
+            categories[product.type] = (categories[product.type] || 0) + product.quantity;
+        });
+
+        const data = {
+            labels: Object.keys(categories),
+            datasets: [{
+                label: 'Product Quantities by Category',
+                data: Object.values(categories),
+                backgroundColor: ['#4CAF50', '#FFC107', '#2196F3'],
+            }]
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            }
+        };
+
+        const chartCanvas = document.getElementById('productBarChart');
+        new Chart(chartCanvas, config);
+    }
+
+    window.onload = loadProductsForMain;
+</script>
 </html>

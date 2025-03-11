@@ -5,6 +5,7 @@ function loadProducts() {
     products.forEach(product => {
         addProductToUI(product);
     });
+    generateBarChart(products);
 }
 
 function addProductToUI(product) {
@@ -30,12 +31,6 @@ function addProductToUI(product) {
         removeOneQuantity(product.id);
     });
 }
-
-
-// Attach event listeners to all search bars
-document.querySelectorAll(".searchBar").forEach(searchBar => {
-    searchBar.addEventListener("input", searchProducts);
-});
 
 // Function to remove one quantity of a product
 function removeOneQuantity(productId) {
@@ -79,6 +74,9 @@ function removeOneQuantity(productId) {
 
     alert(`${removeQty} quantity removed!`);
 }
+
+
+// Function to piechart
 
 
 // Load products when the page loads
