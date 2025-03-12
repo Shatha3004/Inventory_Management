@@ -1,152 +1,37 @@
-.products {
-    width: 100%;
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    background-color: #dce3e9;
+   
+}
+
+
+/* title */
+.title{
+    width: 80%;
+    height: auto;
+   /* background-color: aquamarine; */
+    margin-left: 270px;
+    margin-top: 150px;
     display: flex;
-    justify-content: center;
-    margin-top: 100px;
-}
-
-.products {
-    display: flex;
-    flex-direction: column;
-}
-.products > div {
-    margin-left: 300px;
-    width: 70%;
-    border: 1px solid black;
-    padding: 20px;
-    margin-bottom: 50px;
-    height: 500px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    scrollbar-width: none;
-    border-radius: 10px;
-    border:3px solid black ;
-}
-
-
-.product-item {
-    background: #f1f1f1;
-    margin: 5px 0;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-
-#searchBar {
-    width: 70%;
-    padding: 10px;
-    margin: 20px;
-    font-size: 16px;
-  
-    
-}
-
-.product-item{
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    padding: 30px;
-    border-radius: 10px;
-    margin: 10px;
-    background-color: #f1f1f1;
-    border: 1px solid black;
+
+}
+hr{
+    font-size: 10px;
+    width: 80%;
+    margin-top: 10px;
+    margin-left: 270px;
 }
 
-.product-item .remove-btn{
-    background-color: red;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    outline: none;
-    border: none;
-}
-
-
-@media (max-width: 1024px) {
-    .products > div {
-        margin-left: 30px;
-        width: 80%;
-        height: auto;
-        padding: 15px;
-        margin-bottom: 30px;
-        height: 500px;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        scrollbar-width: none;
-    }
-
-    .product-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        padding: 20px;
-    }
-
-    #searchBar {
-        width: 70%;
-        font-size: 14px;
-        padding: 8px;
-    }
-
-    .product-item .remove-btn {
-        padding: 5px 8px;
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 768px) {
-    .products > div {
-        width: 80%;
-        padding: 10px;
-        height: 500px;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        scrollbar-width: none;
-    }
-
-    .product-item {
-        padding: 15px;
-    }
-
-    #searchBar {
-        width: 70%;
-        font-size: 12px;
-    }
-
-    .product-item .remove-btn {
-        padding: 4px 6px;
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .products > div {
-        width: 80%;
-        margin: 5px auto;
-        padding: 8px;
-        height: auto;
-        height: 500px;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        scrollbar-width: none;
-    }
-
-    .product-item {
-        padding: 10px;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-    }
-
-    #searchBar {
-        width: 70%;
-        font-size: 12px;
-    }
-
-    .product-item .remove-btn {
-        width: 100%;
-        padding: 5px;
-        font-size: 12px;
-    }
+.addproducts{
+    margin-left: 270px;
+    margin-top: 50px;
+    width: 80%;
+    height: 600px;
+    background-color: aquamarine;
 }

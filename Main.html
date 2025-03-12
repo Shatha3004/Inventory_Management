@@ -9,6 +9,7 @@
     <script defer src="script.js"></script>
     <script src="products.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
    
    
@@ -18,49 +19,43 @@
     <header class="header">
         <span class="menu-icon" id="toggleBtn">☰</span>
         <h2>Dashboard</h2>
+        <div class="profile"></div>
     </header>
 
-    <aside class="sidebar" id="sidebar">
+    <nav class="sidebar" id="sidebar">
         <span class="close-icon" id="closeBtn">✖</span>
         <ul>
-            <li><a href="Main.html">Dashboard</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="Sellers.html">Sellers</a></li>
-            <li><a href="acc.html">Accountances</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="Main.html"><i class='bx bxs-dashboard' style="color: while;"></i>Dashboard</a></li>
+            <li><a href="products.html"><i class='bx bx-package'></i>Products</a></li>
+            <li><a href="Sellers.html"><i class='bx bx-cart-alt' ></i>Sellers</a></li>
+            <li><a href="acc.html"><i class='bx bx-wallet' ></i>Accountances</a></li>
+            <li><a href="contact.html"><i class='bx bxs-truck'></i>Orders</a></li>
+            <li><a href="contact.html"><i class='bx bx-universal-access' ></i>Contact</a></li>
+          
         </ul>
-    </aside>
+    </nav>
 
-    <div class="content">
-        <div class="parent">
-            <div class="top">
-                <div class="child"><h2>Total Expanses:1000</h2></div>
-                <div class="child"><h2>Total Stocks:2000</h2></div>
-                <div class="child"><h2>Total Sales:2000</h2></div>
-            </div>
-            <div class="bottom">
-                <div class="child"></div>
-                <div class="child"></div>
-                <div class="child"></div>
-            </div>
+        <div class="purchase">
+            <div class="items"></div>
+            <div class="items"></div>
+            <div class="items"></div>
+            <div class="items"></div>
         </div>
-    </div>
 
-    <div class="title"><h1>Add Products</h1></div>
-    <div class="addproducts">
-        <form action="" class="forms" id="productForm">
-            <input type="text" id="productID" placeholder="Enter product ID" required>
-            <input type="text" id="productName" placeholder="Enter product Name" required>
-            <input type="text" id="productType" placeholder="Enter product Type (electronics, cloths, foods)" required>
-            <input type="number" id="productQuantity" placeholder="Enter Quantity" required>
-            <input type="number" id="productPrice" placeholder="Enter Price" required>
-            <button type="submit">ADD PRODUCTS</button>
-        </form>
-    </div>
+        <div class="chart">
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
 
-    <div class="barchart">
-        <canvas id="productBarChart"></canvas>
-    </div>
+
+        <div class="stockalert">
+            <div class="alerts"></div>
+            <div class="alerts"></div>
+        </div>
+
+        <div class="footer">
+            
+        </div>
 
 </body>
 
