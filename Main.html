@@ -12,7 +12,6 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
    
-   
 </head>
 <body>
 
@@ -26,14 +25,23 @@
         <span class="close-icon" id="closeBtn">✖</span>
         <ul>
             <li><a href="Main.html"><i class='bx bxs-dashboard' style="color: while;"></i>Dashboard</a></li>
-            <li><a href="products.html"><i class='bx bx-package'></i>Products</a></li>
+            <li id="product"><a href=""><i class='bx bx-package'></i>Products</a></li>
             <li><a href="Sellers.html"><i class='bx bx-cart-alt' ></i>Sellers</a></li>
             <li><a href="acc.html"><i class='bx bx-wallet' ></i>Accountances</a></li>
             <li><a href="contact.html"><i class='bx bxs-truck'></i>Orders</a></li>
             <li><a href="contact.html"><i class='bx bx-universal-access' ></i>Contact</a></li>
           
         </ul>
+       
+        
     </nav>
+        <div class="productslist">
+                <ul>
+                    <li><a href="products.html">Add products</a></li>
+                    <li><a href="">List Products</a></li>
+                </ul>
+        </div>
+        
 
         <div class="purchase">
             <div class="items"></div>
@@ -60,44 +68,18 @@
 </body>
 
 <script>
-    function loadProductsForMain() {
-        let products = JSON.parse(localStorage.getItem("products")) || [];
-        generateBarChart(products);
-    }
+    const productLink = document.querySelector('#product');
+    const productsList = document.querySelector('.productslist');
 
-    function generateBarChart(products) {
-        let categories = {};
+    productLink.addEventListener('mouseenter', () => {
+        productsList.style.display = 'block';
+    });
 
-        products.forEach(product => {
-            categories[product.type] = (categories[product.type] || 0) + product.quantity;
-        });
+    productsList.addEventListener('mouseleave', () => {
+        productsList.style.display = 'none';
+    });
 
-        const data = {
-            labels: Object.keys(categories),
-            datasets: [{
-                label: 'Product Quantities by Category',
-                data: Object.values(categories),
-                backgroundColor: ['#4CAF50', '#FFC107', '#2196F3'],
-            }]
-        };
 
-        const config = {
-            type: 'bar',
-            data: data,
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    }
-                }
-            }
-        };
 
-        const chartCanvas = document.getElementById('productBarChart');
-        new Chart(chartCanvas, config);
-    }
-
-    window.onload = loadProductsForMain;
 </script>
 </html>

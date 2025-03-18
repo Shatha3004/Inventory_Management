@@ -22,7 +22,7 @@
         <span class="close-icon" id="closeBtn">✖</span>
         <ul>
             <li><a href="Main.html"><i class='bx bxs-dashboard' style="color: while;"></i>Dashboard</a></li>
-            <li><a href="products.html"><i class='bx bx-package'></i>Products</a></li>
+            <li id="product"><a href=""><i class='bx bx-package'></i>Products</a></li>
             <li><a href="Sellers.html"><i class='bx bx-cart-alt' ></i>Sellers</a></li>
             <li><a href="acc.html"><i class='bx bx-wallet' ></i>Accountances</a></li>
             <li><a href="contact.html"><i class='bx bxs-truck'></i>Orders</a></li>
@@ -31,49 +31,81 @@
         </ul>
     </nav>
 
+    <div class="productslist" style="margin-top: -50px;">
+        <ul>
+            <li><a href="products.html">Add products</a></li>
+            <li><a href="">List Products</a></li>
+        </ul>
+</div>
+
     <div class="title">
         <h1>Add Products</h1>
-        <h3><Span style="color: #544ee8;">Dashboard </Span>/ Add Products</h3>
+        <h3><Span style="color: #544ee8;">Products </Span>/ Add Products</h3>
         
     </div>
     <hr>
     <div class="addproducts">
-        <form action="">
-            <input type="text" placeholder="Product Name">
-            <input type="text" placeholder="Product ID">
+         <div class="details">
+            <form action="" >
+                <div class="a1">
+                    <input type="text" placeholder="Product Name">
+                    <input type="text" placeholder="Product ID">
+                </div>
+                
+              <div class="a1">
+                    <select name="catogories" id="" class="input">
+                        <option value="catogories">Choose Category</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="foods">foods</option>
+                        <option value="cloths">cloths</option>
+                    </select>
+                    <select name="catogories" id="" class="input">
+                        <option value="catogories">Category</option>
+                        
+                    </select>
+                </div>
+    
+                
+           
+                <div class="a1">
+                    <input type="number" placeholder="Product Quantity">
+                    <input type="number" placeholder="Product Price">
+                </div>
+                <div class="a1">
+                    <input type="text" placeholder="Product Name">
+                    <input type="text" placeholder="Product ID">
+                </div>
+                
+                <input type="submit" value="Add Product" class="submit">
+            </form>
+        </div>
+        <div class="img">
 
-            <button>Add Product</button>
-        </form>
+        </div>
     </div>
     
+    <div class="footer">
+            
+    </div>
 
+    
 
 </body>
+
+
 <script>
+    const productLink = document.querySelector('#product');
+    const productsList = document.querySelector('.productslist');
 
-    // search electronics
-    var search=document.querySelector("#searchBar");
-    search.addEventListener("input", searchElectronics);
-
-// Function to search products dynamically in the Electronics section
-function searchElectronics(event) {
-    let searchTerm = event.target.value.toLowerCase(); // Get the input value
-    let electronicsDiv = document.querySelector(".electronics"); // Get the electronics div
-    let productItems = electronicsDiv.querySelectorAll(".product-item"); // Get all product items
-
-    productItems.forEach(item => {
-        let id = item.getAttribute("data-id").toLowerCase();    // Get Product ID
-        let name = item.getAttribute("data-name").toLowerCase(); // Get Product Name
-
-        // Show or hide based on matching ID or Name
-        if (id.includes(searchTerm) || name.includes(searchTerm)) {
-            item.style.display = "flex"; // Show item
-            item.style.justifycontent = "space-between";
-        } else {
-            item.style.display = "none"; // Hide item
-        }
+    productLink.addEventListener('mouseenter', () => {
+        productsList.style.display = 'block';
     });
-}
+
+    productsList.addEventListener('mouseleave', () => {
+        productsList.style.display = 'none';
+    });
+
+
 
 </script>
-</htm
+</html>

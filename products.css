@@ -1,37 +1,156 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Times New Roman', Times, serif;
 }
-body{
-    background-color: #dce3e9;
-   
+
+body {
+    background-color:rgb(220,227,233);
 }
 
 
+.profile{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #1e293b;
+    position: absolute;
+    right: 60px;
+}
+
 /* title */
-.title{
+.title {
     width: 80%;
     height: auto;
-   /* background-color: aquamarine; */
     margin-left: 270px;
     margin-top: 150px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
 }
-hr{
+
+hr {
     font-size: 10px;
     width: 80%;
     margin-top: 10px;
     margin-left: 270px;
 }
 
-.addproducts{
+.addproducts {
     margin-left: 270px;
     margin-top: 50px;
     width: 80%;
     height: 600px;
-    background-color: aquamarine;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+/* add products input sections */
+.details {
+    width: 70%;
+    height: auto;
+}
+
+.details .a1 {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 20px 0 0 0;
+}
+
+.a1 input {
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+.a1 .input {
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+.a1 input::placeholder {
+    padding-left: 10px;
+}
+
+.a1 input:focus::placeholder {
+    font-size: 0%;
+}
+
+.details form input[type="submit"] {
+    width: 80%;
+    height: 40px;
+    background-color: #1e293b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 90px;
+    margin-top: 10px;
+}
+
+.img {
+    width: 30%;
+    height: auto;
+}
+
+/* footer */
+.footer {
+    width: 100%;
+    height: 100px;
+    background-color: #1e293b;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+}
+
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .title {
+        margin-left: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    hr {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .addproducts {
+        margin-left: 30px;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .details .a1 {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .a1 input {
+        padding: 15px;
+    }
+    .a1 .input {
+        padding: 15px 20px;
+        width: 330px;
+    }
+
+    .details form input[type="submit"] {
+        width: 90%;
+        margin-left: 0px;
+        margin-top: 40px;
+    }
 }

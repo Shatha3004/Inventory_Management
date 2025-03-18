@@ -10,6 +10,8 @@
 </head>
 <body>
 
+   
+
     <header class="header">
         <span class="menu-icon" id="toggleBtn">☰</span>
         <h2>Sellers</h2>
@@ -20,7 +22,7 @@
         <span class="close-icon" id="closeBtn">✖</span>
         <ul>
             <li><a href="Main.html"><i class='bx bxs-dashboard' style="color: while;"></i>Dashboard</a></li>
-            <li><a href="products.html"><i class='bx bx-package'></i>Products</a></li>
+            <li id="product"><a href=""><i class='bx bx-package'></i>Products</a></li>
             <li><a href="Sellers.html"><i class='bx bx-cart-alt' ></i>Sellers</a></li>
             <li><a href="acc.html"><i class='bx bx-wallet' ></i>Accountances</a></li>
             <li><a href="contact.html"><i class='bx bxs-truck'></i>Orders</a></li>
@@ -29,10 +31,34 @@
         </ul>
     </nav>
 
+
+    <div class="productslist">
+        <ul>
+            <li><a href="products.html">Add products</a></li>
+            <li><a href="">List Products</a></li>
+        </ul>
+</div>
+
     <div class="content">
         <h1>Welcome to Dashboard</h1>
         <p>This is a responsive sidebar example.</p>
     </div>
 
 </body>
-</htm
+
+<script>
+    const productLink = document.querySelector('#product');
+    const productsList = document.querySelector('.productslist');
+
+    productLink.addEventListener('mouseenter', () => {
+        productsList.style.display = 'block';
+    });
+
+    productsList.addEventListener('mouseleave', () => {
+        productsList.style.display = 'none';
+    });
+
+
+
+</script>
+</html>

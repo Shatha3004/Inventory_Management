@@ -10,17 +10,40 @@ body {
     background-color: #dce3e9;
 }
 
-/* dashboard */
+
+
+.profile{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #1e293b;
+    position: absolute;
+    right: 40px;
+}
+
 .purchase {
     width: 80%;
     height: 180px;
     margin-left: 270px;
-    margin-top: 100px;
+    margin-top: 50px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 50px;
+    opacity: 0;
+    animation: display 2s  forwards; /* Add 'forwards' here */
+}
+
+@keyframes display {
+    0% {
+        opacity: 0;
+        margin-top: 50px;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 100px;
+    }
 }
 
 .purchase .items {
@@ -41,6 +64,17 @@ body {
     justify-content: center;
     align-items: center;
     gap: 50px;
+    animation: display1 2s  forwards; 
+}
+@keyframes display1 {
+    0% {
+        opacity: 0;
+      
+    }
+    100% {
+        opacity: 1;
+        
+    }
 }
 
 .chart .bar {
@@ -61,6 +95,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 50px;
+ 
 }
 
 .stockalert .alerts {
@@ -96,21 +131,6 @@ body {
         margin-top: 10px;
     }
 
-    /* .stockalert {
-        
-    }
-
-    .stockalert .alerts {
-       
-    }
-
-    .chart {
-       
-    }
-
-    .chart .bar {
-        
-    }*/
 } 
 
 @media (max-width: 768px) {
