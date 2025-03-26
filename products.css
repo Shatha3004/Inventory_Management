@@ -138,11 +138,101 @@ hr {
 }
 
 .items{
-    background-color: red;
+  
     height: 700px;
-    width: 70%;
+    width: 80%;
     margin-left: 270px;
 }
+
+
+/* list items */
+
+
+
+/* Table container */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table header */
+th {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 2px solid #ddd;
+    cursor: pointer;
+}
+
+/* Sorting icons */
+th i {
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+/* Table rows */
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Checkbox alignment */
+td input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+/* Image styling */
+td img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Action buttons */
+.action-buttons i {
+    font-size: 20px;
+    margin: 0 8px;
+    cursor: pointer;
+}
+
+/* Color for each button */
+.action-buttons .bx-show { color: green; }
+.action-buttons .bx-edit { color: blue; }
+.action-buttons .bx-trash { color: red; }
+
+/* Hover effect */
+.action-buttons i:hover {
+    opacity: 0.7;
+}
+
+
+.searchbox {
+    width: 40%;
+    height: 40px;
+    margin-left: 270px;
+   margin-bottom: 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    
+}
+
+.searchbox::placeholder{
+    padding-left: 10px;
+}
+.searchbox:focus::placeholder{
+    font-size: 0%;
+}
+
 
 /* Responsive Design */
 @media only screen and (max-width: 768px) {
