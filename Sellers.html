@@ -7,6 +7,77 @@
     <link rel="stylesheet" href="Sidebar.css">
     <script defer src="script.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+
+          body{
+            background-color:rgb(220,227,233);
+          }
+       
+            .table-container {
+                width: 100%;
+                overflow-x: auto;
+            }
+
+           
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                background: white;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+           
+            th {
+                text-align: left;
+                padding: 12px;
+                border-bottom: 2px solid #ddd;
+                cursor: pointer;
+            }
+
+            
+            th i {
+                font-size: 14px;
+                margin-left: 5px;
+            }
+
+            
+            td {
+                padding: 12px;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .sellers{
+                width: 80%;
+                height: auto;
+                margin-left: 270px;
+                margin-top: 130px;
+            }
+
+            .searchbox {
+                width: 40%;
+                height: 40px;
+                margin-left: 270px;
+                margin-bottom: 20px;
+                border-radius: 10px;
+                border: none;
+                outline: none;
+                
+            }
+
+            .searchbox::placeholder{
+                padding-left: 10px;
+            }
+            .searchbox:focus::placeholder{
+                font-size: 0%;
+            }
+
+            .sellers hr{
+                margin-bottom:30px ;
+                margin-top: 5px;
+            }
+
+    </style>
 </head>
 <body>
 
@@ -25,21 +96,91 @@
             <li id="product"><a href="products.html"><i class='bx bx-package'></i>Products</a></li>
             <li><a href="Sellers.html"><i class='bx bx-cart-alt' ></i>Sellers</a></li>
             <li><a href="acc.html"><i class='bx bx-wallet' ></i>Accountances</a></li>
-            <li><a href="contact.html"><i class='bx bxs-truck'></i>Orders</a></li>
+            <li><a href="orders.html"><i class='bx bxs-truck'></i>Orders</a></li>
             <li><a href="contact.html"><i class='bx bx-universal-access' ></i>Contact</a></li>
           
         </ul>
     </nav>
 
-
-   
-
-    <div class="content">
-        <h1>Welcome to Dashboard</h1>
-        <p>This is a responsive sidebar example.</p>
+    
+       <div class="sellers" >
+        <h1>List of Sellers</h1>
+        <hr>
+        <div class="items">
+            <input type="text" id="searchInput" class="searchbox" placeholder="Search for products..." onkeyup="searchTable()">
+            <div class="table-container">
+                <table id="productTable">
+                    <thead>
+                        <tr>
+                            
+                            <th>IMAGE</th>
+                            <th>NAME <i class='bx bx-sort'></i></th>
+                            <th>CODE <i class='bx bx-sort'></i></th>
+                            <th>CATEGORY <i class='bx bx-sort'></i></th>
+                            <th>BRAND <i class='bx bx-sort'></i></th>
+                            <th>PRICE <i class='bx bx-sort'></i></th>
+                            <th>UNIT <i class='bx bx-sort'></i></th>
+                            <th>QUANTITY <i class='bx bx-sort'></i></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="items-sections">
+                            <td><img src="earphones.jpg" alt="Earphones"></td>
+                            <td>car</td>
+                            <td>5389607</td>
+                            <td>Electronics</td>
+                            <td>JCL</td>
+                            <td>101.00</td>
+                            <td>pc</td>
+                            <td>105</td>
+                        </tr>
+                        <tr class="items-sections">
+                            <td><img src="earphones.jpg" alt="Earphones"></td>
+                            <td>pans</td>
+                            <td>5389607</td>
+                            <td>Electronics</td>
+                            <td>JCL</td>
+                            <td>101.00</td>
+                            <td>pc</td>
+                            <td>105</td>
+                        </tr>
+                        <tr class="items-sections">
+                            <td><img src="earphones.jpg" alt="Earphones"></td>
+                            <td>Earphones</td>
+                            <td>5389607</td>
+                            <td>Electronics</td>
+                            <td>JCL</td>
+                            <td>101.00</td>
+                            <td>pc</td>
+                            <td>105</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
 </body>
-
+<script>
+    function searchTable() {
+        let input = document.getElementById("searchInput").value.toLowerCase();
+        let table = document.getElementById("productTable");
+        let rows = table.getElementsByTagName("tr");
+        
+        for (let i = 1; i < rows.length; i++) { // Skip header row
+            let cells = rows[i].getElementsByTagName("td");
+            let match = false;
+            
+            for (let j = 1; j < cells.length; j++) { // Start from 1 to skip checkbox column
+                if (cells[j] && cells[j].innerText.toLowerCase().includes(input)) {
+                    match = true;
+                    break;
+                }
+            }
+            
+            rows[i].style.display = match ? "" : "none";
+        }
+    }
+    </script>
 
 </html>

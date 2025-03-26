@@ -183,11 +183,7 @@ td {
     border-bottom: 1px solid #ddd;
 }
 
-/* Checkbox alignment */
-td input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-}
+
 
 /* Image styling */
 td img {
@@ -197,22 +193,9 @@ td img {
     object-fit: cover;
 }
 
-/* Action buttons */
-.action-buttons i {
-    font-size: 20px;
-    margin: 0 8px;
-    cursor: pointer;
-}
 
-/* Color for each button */
-.action-buttons .bx-show { color: green; }
-.action-buttons .bx-edit { color: blue; }
-.action-buttons .bx-trash { color: red; }
 
-/* Hover effect */
-.action-buttons i:hover {
-    opacity: 0.7;
-}
+
 
 
 .searchbox {
