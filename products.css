@@ -29,6 +29,14 @@ body {
     justify-content: space-between;
 }
 
+.title li{
+    list-style: none;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px;
+    
+}
+
 hr {
     font-size: 10px;
     width: 80%;
@@ -44,6 +52,22 @@ hr {
     border-radius: 10px;
     display: flex;
     flex-direction: row;
+}
+
+
+  /* Default styles */
+  .tab {
+    cursor: pointer;
+    color: black; /* Default color */
+    list-style: none; /* Remove default list styles */
+    display: inline;
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+/* Active tab style */
+.active-tab {
+        color: blue !important;
 }
 
 /* add products input sections */
@@ -113,6 +137,12 @@ hr {
     padding-top: 15px;
 }
 
+.items{
+    background-color: red;
+    height: 700px;
+    width: 70%;
+    margin-left: 270px;
+}
 
 /* Responsive Design */
 @media only screen and (max-width: 768px) {

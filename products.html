@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="Sidebar.css">
     <link rel="stylesheet" href="products.css">
     <script defer src="script.js"></script>
-    <script src="products.js"></script>
+    <script defer src="products.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+      
+    </style>
 </head>
 <body>
 
@@ -21,52 +24,45 @@
     <nav class="sidebar" id="sidebar">
         <span class="close-icon" id="closeBtn">✖</span>
         <ul>
-            <li><a href="Main.html"><i class='bx bxs-dashboard' style="color: while;"></i>Dashboard</a></li>
-            <li id="product"><a href=""><i class='bx bx-package'></i>Products</a></li>
-            <li><a href="Sellers.html"><i class='bx bx-cart-alt' ></i>Sellers</a></li>
-            <li><a href="acc.html"><i class='bx bx-wallet' ></i>Accountances</a></li>
+            <li><a href="Main.html"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
+            <li id="product"><a href="products.html"><i class='bx bx-package'></i>Products</a></li>
+            <li><a href="Sellers.html"><i class='bx bx-cart-alt'></i>Sellers</a></li>
+            <li><a href="acc.html"><i class='bx bx-wallet'></i>Accountances</a></li>
             <li><a href="contact.html"><i class='bx bxs-truck'></i>Orders</a></li>
-            <li><a href="contact.html"><i class='bx bx-universal-access' ></i>Contact</a></li>
-
+            <li><a href="contact.html"><i class='bx bx-universal-access'></i>Contact</a></li>
         </ul>
     </nav>
 
-    <div class="productslist" style="margin-top: -50px;">
-        <ul>
-            <li><a href="products.html">Add products</a></li>
-            <li><a href="">List Products</a></li>
-        </ul>
-</div>
-
     <div class="title">
-        <h1>Add Products</h1>
-        <h3><Span style="color: #544ee8;">Products </Span>/ Add Products</h3>
-        
+        <h1>Add Products  </h1>
+        <h3>
+            <li class="tab active-tab" onclick="toggleDiv('div1', this)">Add Product</li> /
+            <li class="tab" onclick="toggleDiv('div2', this)">List Products</li>
+        </h3>
     </div>
     <hr>
-    <div class="addproducts">
+
+    <!-- First Div (Initially Visible) -->
+    <div class="addproducts showitem" id="div1">
          <div class="details">
-            <form action="" >
+            <form action="">
                 <div class="a1">
                     <input type="text" placeholder="Product Name">
                     <input type="text" placeholder="Product ID">
                 </div>
                 
-              <div class="a1">
-                    <select name="catogories" id="" class="input">
-                        <option value="catogories">Choose Category</option>
+                <div class="a1">
+                    <select name="categories" class="input">
+                        <option value="categories">Choose Category</option>
                         <option value="Electronics">Electronics</option>
-                        <option value="foods">foods</option>
-                        <option value="cloths">cloths</option>
+                        <option value="foods">Foods</option>
+                        <option value="cloths">Cloths</option>
                     </select>
-                    <select name="catogories" id="" class="input">
-                        <option value="catogories">Category</option>
-                        
+                    <select name="subcategories" class="input">
+                        <option value="subcategories">Category</option>
                     </select>
                 </div>
     
-                
-           
                 <div class="a1">
                     <input type="number" placeholder="Product Quantity">
                     <input type="number" placeholder="Product Price">
@@ -79,33 +75,42 @@
                 <input type="submit" value="Add Product" class="submit">
             </form>
         </div>
-        <div class="img">
+        <div class="img"></div>
+    </div>
+
+    <!-- Second Div (Initially Hidden) -->
+    <div class="listitems showitem hidden" id="div2" style="display: none;">
+        <h2>List of Products</h2>
+        <div class="items">
 
         </div>
     </div>
-    
-    <div class="footer">
-            
-    </div>
 
-    
+    <div class="footer"></div>
+
+    <script>
+        function toggleDiv(activeDivId, clickedTab) {
+            // Get all div elements with the class 'showitem'
+            var allDivs = document.querySelectorAll('.showitem');
+
+            // Hide all divs
+            allDivs.forEach(div => {
+                div.style.display = (div.id === activeDivId) ? "block" : "none";
+            });
+
+            // Update tab colors
+            document.querySelectorAll(".tab").forEach(tab => {
+                tab.classList.remove("active-tab"); // Remove active class from all tabs
+            });
+
+            clickedTab.classList.add("active-tab"); // Highlight the clicked tab
+        }
+
+        // Ensure the first div is shown initially
+        document.addEventListener("DOMContentLoaded", function () {
+            toggleDiv('div1', document.querySelector('.tab.active-tab'));
+        });
+    </script>
 
 </body>
-
-
-<script>
-    const productLink = document.querySelector('#product');
-    const productsList = document.querySelector('.productslist');
-
-    productLink.addEventListener('mouseenter', () => {
-        productsList.style.display = 'block';
-    });
-
-    productsList.addEventListener('mouseleave', () => {
-        productsList.style.display = 'none';
-    });
-
-
-
-</script>
 </html>
