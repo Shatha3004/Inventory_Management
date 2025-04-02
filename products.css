@@ -257,3 +257,111 @@ td img {
         margin-top: 40px;
     }
 }
+
+
+.overlaybox{
+    z-index: 2000; 
+    background-color: black;
+    opacity: .7;
+    width: 100%;
+    height: 100dvh;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+.overlaybox,.displaysell{
+    display: none;
+}
+
+.displaysell
+{
+    z-index: 2001;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    /* color: black; */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    
+
+}
+.displaysell .det_sec{
+    display: flex;
+    justify-content: space-evenly;
+    width: 400px;
+    height: 400px;
+    flex-direction: column;
+}
+
+.displaysell input[type="text"]
+{
+    width: 80%;
+    height: 5%;
+    margin-left: 8%;
+    outline: none;
+    border:none;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.displaysell input[type="text"]:focus::placeholder{
+    font-size: 0;
+}
+.displaysell input[type="number"]:focus::placeholder{
+    font-size: 0;
+}
+.displaysell input[type="number"]
+{
+    width: 80%;
+    height: 5%;
+    margin-left: 8%;
+    outline: none;
+    border:none;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.displaysell input[type="button"]
+{
+    width: 100px;
+    height: 30px;
+    margin-left: 150px;
+    border:1px solid black;
+    cursor: pointer;
+}
+
+.displaysell input[type="button"]:hover{
+    background-color: green;
+    color: white;
+    transition: 0.5s;
+}
+
+.sell{
+    padding:3px 10px;
+    width: 70px;
+    background-color: white;
+    color: green;
+    outline: none;
+    border: 1px solid black;
+    
+    cursor: pointer;
+}
+.sell:hover{
+    background-color: green;
+    color: white; 
+    transition: .5s ;
+}
+
+.sell span{
+    padding:4px 20px;
+    
+    background-color: green;
+    z-index: 100;
+}
